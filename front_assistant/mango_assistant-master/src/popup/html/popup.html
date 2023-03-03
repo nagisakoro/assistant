@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="../css/popup.css">
+    <script type="text/javascript" src="../../ma_source/static_files/libs/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../../ma_source/static_files/libs/mask.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Авторизация</h2>
+        <h4 class="container__message">Укажите свой рабочий email в формате: i.ivanov@mangotele.com</h4>
+        <h4 class="container__notification">Email указан некорректно</h4>
+        <input class="container__auth-input container__auth-input__width_90" type="text">
+        <h4 class="container__callback-message">Заказ обратного звонка</h4>
+        <input class="container__callback-input container__auth-callback__width_90" placeholder="7 (495) 123-45-67"
+            disabled>
+        <button
+            class="container__callback-button container__callback-button_margin_5px-0 container__callback-button_width_93"
+            disabled>Заказать обратный звонок</button>
+        <h5 class="container__callback-notification">Укажите email для возможности ЗОЗа</h4>
+    </div>
+
+    <script type="text/javascript" src="../../environment/ma-environment.js"></script>
+    <script type="text/javascript" src="../js/model.js"></script>
+    <script type="text/javascript" src="../js/view.js"></script>
+    <script type="text/javascript" src="../js/service/statistic.service.js"></script>
+    <script type="text/javascript" src="../js/service/runtime.service.js"></script>
+    <script type="text/javascript" src="../../common-service/local-storage.service.js"></script>
+    <script type="text/javascript" src="../js/service/auth.service.js"></script>
+    <script type="text/javascript" src="../js/service/callback.service.js"></script>
+    <script type="text/javascript" src="../js/popup.js"></script>
+</body>
+
+</html>

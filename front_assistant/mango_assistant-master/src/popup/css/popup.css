@@ -1,0 +1,24 @@
+body {
+  min-width: 300px;
+  width: 300px;
+  max-width: 300px;
+  min-height: 300px;
+  height: 300px;
+  max-height: 300px;
+}
+
+.container__auth-input__width_90 {
+  width: 90%;
+}
+
+.container__auth-callback__width_90 {
+  width: 90%;
+}
+
+.container__callback-button_margin_5px-0 {
+  margin: 5px 0;
+}
+
+.container__callback-button_width_93 {
+  width: 93%;
+}

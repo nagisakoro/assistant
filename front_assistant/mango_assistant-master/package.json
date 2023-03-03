@@ -1,0 +1,30 @@
+{
+  "name": "mangoassistant",
+  "private": true,
+  "version": "1.8.1",
+  "description": "Extension to help work with personal account MANGO OFFICE",
+  "scripts": {
+    "build:devServer": "webpack",
+    "build:dev": "webpack",
+    "build:test": "webpack",
+    "build:prod": "webpack"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "mango",
+    "office",
+    "assistant",
+    "extension",
+    "addon",
+    "account"
+  ],
+  "author": "Ivanchenko_D.V",
+  "license": "ISC",
+  "dependencies": {
+    "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.3.1",
+    "webpack": "3.10.0"
+  }
+}

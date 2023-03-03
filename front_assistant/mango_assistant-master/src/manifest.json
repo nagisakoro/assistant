@@ -1,0 +1,90 @@
+{
+  "manifest_version": 2,
+  "name": "Mango Assistant",
+  "short_name": "Mango Assistant",
+  "description": "Расширение - помощник для работы в личном кабинете Mango Office",
+  "version": "1.8.4",
+  "icons": {
+    "16": "/images/logo_16.png",
+    "48": "/images/logo_48.png",
+    "128": "/images/logo_128.png"
+  },
+  "permissions": ["background", "tabs"],
+  "background": {
+    "persistent": false,
+    "scripts": ["/common-service/local-storage.service.js", "/background/background.js"]
+  },
+  "externally_connectable": {
+    "ids": ["gppkcbehohdfmcoiboinplapbnijcpac", "nbcjlalaiccpaopmmfinflnljdbpogac"],
+    "matches": ["*://lk.mango-office.ru/profile/*/*", "*://lk.mango-office.ru/*/*/stats/*", "*://lk.mango-office.ru/*/*/feedback"],
+    "accepts_tls_channel_id": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://lk.mango-office.ru/*/*/*"],
+      "js": ["/ma_source/lk-pages-script.js"]
+    },
+    {
+      "matches": ["*://lk.mango-office.ru/profile/*/*", "*://lk.mango-office.ru/*/*/stats/*", "*://lk.mango-office.ru/*/*/feedback"],
+      "js": [
+        "/ma_source/static_files/libs/jquery-3.4.1.min.js",
+        "/ma_source/static_files/sourcecode/analyzer/model/ma_analyzerModel.js",
+        "/ma_source/static_files/sourcecode/common-service/ma-view.service.js",
+        "/ma_source/static_files/sourcecode/common-service/ma-runtime.service.js",
+        "/ma_source/ma-runtime-script.js"
+      ]
+    },
+    {
+      "matches": ["*://creatio/*", "*://bpmprod01-msk.corp.mango.ru/*", "*://192.168.79.10/*"],
+      "js": ["/ma_source/bpm-case-page-script.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "Mango Assistant",
+    "default_icon": "/images/icon.png",
+    "default_popup": "/popup/html/popup.html"
+  },
+  "web_accessible_resources": [
+    "/ma_source/static_files/libs/jquery-3.4.1.min.js",
+    "/ma_source/static_files/libs/mask.js",
+    "/ma_source/static_files/libs/xhr-listener.js",
+    "/ma_source/static_files/sourcecode/common-service/ma-view.service.js",
+    "/ma_source/static_files/sourcecode/common-service/auth.service.js",
+    "/ma_source/static_files/sourcecode/common-service/ma-runtime.service.js",
+    "/ma_source/static_files/sourcecode/main_block/js/ma_common.js",
+    "/ma_source/static_files/sourcecode/common-html/ma-auth-block.js",
+    "/ma_source/static_files/sourcecode/main_block/html/ma_loaderHTMLCode.js",
+    "/ma_source/static_files/sourcecode/main_block/html/ma_mainHTMLCode.js",
+    "/ma_source/static_files/sourcecode/main_block/js/ma_mainScript.js",
+    "/ma_source/static_files/sourcecode/main_block/js/active-sip/ma-active-sip-common.js",
+    "/ma_source/static_files/sourcecode/main_block/js/active-sip/view/ma-empty-log-dialog-class.js",
+    "/ma_source/static_files/sourcecode/main_block/js/active-sip/view/ma-incorrect-format-block-class.js",
+    "/ma_source/static_files/sourcecode/main_block/js/active-sip/view/ma-download-logs-block-class.js",
+    "/ma_source/static_files/sourcecode/main_block/js/active-sip/view/ma-bad-sip-block-class.js",
+    "/ma_source/static_files/sourcecode/main_block/js/active-sip/view/ma-active-sip-view.js",
+    "/ma_source/static_files/sourcecode/main_block/js/active-sip/ma-active-sip-http.js",
+    "/ma_source/static_files/sourcecode/main_block/js/active-sip/ma-active-sip-controller.js",
+    "/ma_source/static_files/sourcecode/analyzer/ma-analyzer-main.js",
+    "/ma_source/static_files/sourcecode/analyzer/view/dump/ma-analyzer-view-dump-dialog.js",
+    "/ma_source/static_files/sourcecode/analyzer/view/dump/ma-analyzer-view-dump.js",
+    "/ma_source/static_files/sourcecode/analyzer/view/ma-analyzer-view.js",
+    "/ma_source/static_files/sourcecode/analyzer/model/ma_analyzerModel.js",
+    "/ma_source/static_files/sourcecode/analyzer/controller/ma_analyzerController.js",
+    "/ma_source/static_files/sourcecode/analyzer/controller/common/ma_analyzerComonFunc.js",
+    "/ma_source/static_files/sourcecode/analyzer/controller/common/http-service/ma-analyzer-http-dump.js",
+    "/ma_source/static_files/sourcecode/analyzer/controller/common/http-service/ma-analyzer-http-service.js",
+    "/ma_source/static_files/sourcecode/bpm/case_page/service/bpm-common.service.js",
+    "/ma_source/static_files/sourcecode/bpm/case_page/service/cookie.service.js",
+    "/ma_source/static_files/sourcecode/bpm/case_page/service/statistic.service.js",
+    "/ma_source/static_files/sourcecode/bpm/case_page/case-to-account/http.service.js",
+    "/ma_source/static_files/sourcecode/bpm/case_page/case-to-account/page.model.js",
+    "/ma_source/static_files/sourcecode/bpm/case_page/case-to-account/page.service.js",
+    "/ma_source/static_files/sourcecode/bpm/case_page/case-to-account/request-body.service.js",
+    "/ma_source/static_files/sourcecode/bpm/case_page/case-to-account/ma-case-to-account.js",
+    "/ma_source/static_files/sourcecode/bpm/case_page/sd-rm/ma-sd-rm.js",
+    "/ma_source/static_files/sourcecode/bpm/case_page/ma-bpm-case-script.js",
+    "/ma_source/static_files/sourcecode/feedback/ma-feedback.js",
+    "/ma_source/static_files/sourcecode/dynamic_pages/dynamic-pages.js",
+    "/environment/ma-environment.js"
+  ]
+}
